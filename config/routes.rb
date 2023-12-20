@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :events
   resources :invitations, only: [:create]
+
+  devise_for :users, controllers: {
+  sessions: 'users/sessions',
+  registrations: 'users/registrations'
+}
 end
